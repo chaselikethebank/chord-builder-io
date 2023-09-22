@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
+import Draw from "./assets/components/Draw";
+import ExportChord from "./assets/components/ExportChord"
 
 function App() {
-  const [selectedFont, setSelectedFont] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedPad, setSelectedPad] = useState("");
-  const [input, setInput] = useState("this text");
+  const [selectedFont, setSelectedFont] = useState("Helvetica, sans-serif");
+  const [selectedSize, setSelectedSize] = useState("2rem");
+  const [selectedPad, setSelectedPad] = useState("1rem");
+  const [nameInput, setNameInput] = useState("chord name here");
 
   const fontOptions = [
     "Arial, sans-serif",
@@ -21,6 +23,7 @@ function App() {
   ];
 
   const sizeOptions = [
+    
     "1rem",
     "1.2rem",
     "1.4rem",
@@ -35,6 +38,12 @@ function App() {
   ];
 
   const padOptions = [
+    "0rem",
+    ".2rem",
+    ".4rem",
+    ".6rem",
+    ".8rem",
+    "2rem",
     "1rem",
     "1.2rem",
     "1.4rem",
@@ -60,74 +69,78 @@ function App() {
     setSelectedPad(event.target.value);
   };
 
-  const handleInputChange = (event) => {
-    setInput(event.target.value);
-  };
+ 
 
   return (
-    <div>
-      <h1>chord.builder</h1>
-      <p>one step at a time</p>
-
-      {/* Dropdown for font selection */}
-      <label>Design Font: </label>
-      <select value={selectedFont} onChange={handleFontChange}>
-        <option value=""></option>
-        {fontOptions.map((font, index) => (
-          <option key={index} value={font}>
-            {font}
-          </option>
-        ))}
-      </select>
-
-      <p></p>
-      <label>Design Size: </label>
-      <select value={selectedSize} onChange={handleSizeChange}>
-        <option value=""></option>
-        {sizeOptions.map((size, index) => (
-          <option key={index} value={size}>
-            {size}
-          </option>
-        ))}
-      </select>
-
-      <p></p>
-      <label>Design Spacing: </label>
-      <select value={selectedPad} onChange={handlePadChange}>
-        <option value=""></option>
-        {padOptions.map((pad, index) => (
-          <option key={index} value={pad}>
-            {pad}
-          </option>
-        ))}
-      </select>
-
-      <p></p>
-      <label>Input Text: </label>
-      <input
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Enter text..."
-      />
-      <p></p>
-
-      {selectedFont && (
-        <p
-          style={{
-            fontSize: selectedSize,
-            fontFamily: selectedFont,
-            padding: selectedPad,
-          }}
-          className="styled card"
-        >
-          {input} is the {selectedFont} @ {selectedSize} with {selectedPad} space around it.
-          
-        </p>
+    <>
+      <div>
+        <div className="style title">
+        <h1>chord.builder 
         
-      )}
-    
-    </div>
+        </h1>
+        <div className="sub">
+     one step at a time
+     </div>
+        </div>
+
+        
+
+        <p></p>
+        {/* <label>chord name </label>
+        <input
+          type="text"
+          value={nameInput}
+          onChange={handleInputChange}
+          placeholder="Enter text..."
+        /> */}
+
+<div className="display-row ">
+  <div>
+      <label>design font: </label>
+        <select value={selectedFont} onChange={handleFontChange}>
+          <option value=""></option>
+          {fontOptions.map((font, index) => (
+            <option key={index} value={font}>
+              {font}
+            </option>
+          ))}
+        </select>
+        </div>
+            <div>
+        <label>design size: </label>
+        <select value={selectedSize} onChange={handleSizeChange}>
+          <option value=""></option>
+          {sizeOptions.map((size, index) => (
+            <option key={index} value={size}>
+              {size}
+            </option>
+          ))}
+        </select>
+        </div>
+        <div>
+        <label>design spacing: </label>
+        <select value={selectedPad} onChange={handlePadChange}>
+          <option value=""></option>
+          {padOptions.map((pad, index) => (
+            <option key={index} value={pad}>
+              {pad}
+            </option>
+          ))}
+        </select>
+        </div>
+        </div>
+
+     
+      </div>
+      <div>
+          <Draw font={selectedFont} size={selectedSize} pad={selectedPad} nameInput={nameInput} handleInputChange={handleFontChange} setNameInput={setNameInput}/>
+      </div>
+
+      <div>
+        <ExportChord />
+        </div>
+        
+    </>
   );
 }
 

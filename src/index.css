@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #203546;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,12 +16,26 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  /* color: #646cff; */
+  color: #f96;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  /* color: #535bf2; */
+  color: #f96;
 }
+
+/* .align-left{
+  justify-content: start;
+}
+
+.align-right{
+  justify-content: end;
+}
+
+.align-center{
+  justify-content: space-around;
+} */
 
 body {
   margin: 0;
@@ -38,29 +52,49 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #203546;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  /* border-color: #646cff; */
+  border-color: #f96;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-background-color: #f5f3ea;
-    border: 1.5px solid #1b1c1d;
-    border-radius: 0.25rem;
+.light-bg{
+  background-color: #f9f9f9;
+
+}
+
+.title {
+  background-color: #f5f3ea;
+    border: 1.5px solid #203546;
+    border-radius: 8px;
     padding: 0.75rem;
-    box-shadow: 2px 2px #1b1c1d;
+    box-shadow: 4px 4px #203546;
+}
+
+.display-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 952px;
+  padding: 1rem 2rem 0 1rem;
+  
+}
+
+.sub{
+  position: relative;
+  bottom: 1.25rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -69,7 +103,9 @@ background-color: #f5f3ea;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    /* color: #747bff;
+     */
+     color: #f96;
   }
   button {
     background-color: #f9f9f9;

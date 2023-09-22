@@ -1,0 +1,47 @@
+.chord-title {
+  /* padding-top: .75rem; */
+}
+
+
+
+.grid-build,
+.grid-print {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px; 
+}
+
+.grid-item {
+  border: 3px solid #203546; 
+  text-align: center;
+  padding: 10px;
+}
+
+.window {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  /* padding: 4em; */
+  gap: 2rem;
+}
+.main-card {
+  border: 2px solid #203546;
+  border-radius: 8px;
+  width: 400px; 
+  padding: 0.75rem;
+
+}
+
+@media (max-width: 768px) {
+
+  .window {
+    flex-direction: column; 
+    margin: 1rem; 
+  }
+
+  .main-card {
+    width: 100%; 
+  }
+
+}
+
