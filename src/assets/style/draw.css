@@ -8,13 +8,32 @@
 .grid-print {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px; 
+  /* border: 3px solid #203546; */
+  border-top:  11px solid #203546;
+  border-left: 3px solid #203546;
+  /* border-right: 1px solid #203546; */
+  /* border-bottom: 1px solid #203546; */
+
 }
 
 .grid-item {
-  border: 3px solid #203546; 
   text-align: center;
   padding: 10px;
+  height: 55px;
+  border-right: 3px solid #203546;
+  border-bottom: 3px solid #203546;
+  position: relative;
+}
+
+/* Add border only to the right and bottom sides of grid items */
+.grid-item:not(:first-child) {
+  border-right:  3px solid #203546;
+
+}
+
+/* Add border only to the bottom side of grid items */
+.grid-item.grid-item:nth-child(1n) {
+
 }
 
 .window {
@@ -28,7 +47,7 @@
   border: 2px solid #203546;
   border-radius: 8px;
   width: 400px; 
-  padding: 0.75rem;
+  padding: 3.75rem;
 
 }
 

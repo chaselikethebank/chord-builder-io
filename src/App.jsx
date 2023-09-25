@@ -7,7 +7,7 @@ function App() {
   const [selectedFont, setSelectedFont] = useState("Helvetica, sans-serif");
   const [selectedSize, setSelectedSize] = useState("2rem");
   const [selectedPad, setSelectedPad] = useState("1rem");
-  const [nameInput, setNameInput] = useState("chord name here");
+  const [nameInput, setNameInput] = useState("E min7");
 
   const fontOptions = [
     "Arial, sans-serif",

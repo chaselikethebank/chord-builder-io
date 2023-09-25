@@ -20,7 +20,7 @@ function Draw({ nameInput, setNameInput, font, size, pad }) {
               placeholder="Enter text..."
             />
           </div>
-          <div className="pad grid-print">
+          <div className="pad-sides grid-print">
             {Array.from({ length: 24 }, (_, index) => (
               <div className="grid-item" key={index}>
                 {index + 1}
